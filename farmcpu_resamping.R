@@ -23,7 +23,7 @@ for(x in 1:100){
   colnames(phe1)=paste0(colnames(phenotype),x)  # rename the phenotype by attaching bootstrap number 
   for(i in 2:ncol(phe1)){
     imMVP<-MVP(phe = phe1[,c(1,i)], geno = genotype, map = map, K=Kinship, CV.FarmCPU=Covariates_PC, file.output = "pmap.signal",
-               nPC.FarmCPU = 3, maxLoop = 10, method = "FarmCPU")
+               nPC.FarmCPU = 3, maxLoop = 10, method = "FarmCPU", ,threshold=0.2,p.threshold=1e-08)
   }
 }
 # Get all filenames ending with .FarmCPU_signals.csv
